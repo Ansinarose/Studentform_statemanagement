@@ -16,7 +16,7 @@ class NameScreen extends StatelessWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) {
         if(value == null || value.isEmpty){
-          return "Name is required";    
+          return "Name is required for this";    
         }
         return null;
       },
