@@ -214,10 +214,12 @@ class StudentAdd extends StatelessWidget {
     String age = userAgeController.text;
     String contact = userContactController.text;
     String rollnumber = userRollNumberController.text;
-    int id = await databaseController.createData(name, age, contact, rollnumber, '');
+    String imagePath = Get.find<StudentController>().imagePath.value;
+    int id = await databaseController.createData(
+      name, age, contact, rollnumber, imagePath);
     if (id != -1) {
       // Student added successfully, navigate to StudentList page
-      Get.to(StudentList());
+Get.to(StudentList());
     } else {
       // Handle error if insertion failed
       // You can show a snackbar or dialog to notify the user
