@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable, unnecessary_null_comparison
+
 
 import 'dart:io';
 
@@ -16,11 +16,11 @@ import 'package:studentlist_statemanagement/widgets/name_widget.dart';
 class StudentAdd extends StatelessWidget {
    StudentAdd({Key? key});
 
-  var userNameController = TextEditingController();
-  var userAgeController = TextEditingController();
-  var userContactController = TextEditingController();
-  var userRollNumberController = TextEditingController();
- var formKey = GlobalKey<FormState>();
+  final userNameController = TextEditingController();
+  final userAgeController = TextEditingController();
+  final userContactController = TextEditingController();
+  final userRollNumberController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
   bool validateName = false;
   bool validateAge = false;
   bool validateContact = false;
