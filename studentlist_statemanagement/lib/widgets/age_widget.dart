@@ -7,7 +7,7 @@ class  AgeScreen extends StatelessWidget {
   required this.validateAge});
 
   final TextEditingController userAgeController;
-  bool validateAge = false;
+   final bool validateAge ;
 
   @override
   Widget build(BuildContext context) {

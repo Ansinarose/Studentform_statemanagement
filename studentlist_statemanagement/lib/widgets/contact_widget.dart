@@ -1,15 +1,17 @@
+// ignore_for_file: unused_import, unnecessary_import
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
 class ContactScreen extends StatelessWidget {
-   ContactScreen({super.key, 
-  required this.userContactController,
-  required this.validateContact});
+  
  
  final TextEditingController userContactController;
- bool validateContact = false;
+  final bool validateContact ;
+
+   ContactScreen({super.key, required this.userContactController,required this.validateContact});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -27,7 +29,7 @@ class ContactScreen extends StatelessWidget {
         LengthLimitingTextInputFormatter(10)
       ],
       controller: userContactController,
-      decoration: const InputDecoration(
+      decoration:  InputDecoration(
         prefixIcon:  Icon(Icons.contacts),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
@@ -40,6 +42,7 @@ class ContactScreen extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15))),
                                  labelText: "Contact",
+                                  errorText: validateContact ? 'Name Not Found !' : null,
       ),
        
     );

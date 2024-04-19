@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   image_picker: ^1.1.0
   images_picker: ^1.2.11
+  sqflite: ^2.3.3
 
 dev_dependencies:
   flutter_test:

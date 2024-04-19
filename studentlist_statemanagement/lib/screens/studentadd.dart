@@ -1,10 +1,12 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, unnecessary_null_comparison
 
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:studentlist_statemanagement/Model/db_helper.dart';
 import 'package:studentlist_statemanagement/controller/studentcontroller.dart';
+import 'package:studentlist_statemanagement/screens/studentlist.dart';
 import 'package:studentlist_statemanagement/widgets/age_widget.dart';
 import 'package:studentlist_statemanagement/widgets/button_widget.dart';
 import 'package:studentlist_statemanagement/widgets/contact_widget.dart';
@@ -18,7 +20,7 @@ class StudentAdd extends StatelessWidget {
   var userAgeController = TextEditingController();
   var userContactController = TextEditingController();
   var userRollNumberController = TextEditingController();
-
+ var formKey = GlobalKey<FormState>();
   bool validateName = false;
   bool validateAge = false;
   bool validateContact = false;
@@ -37,7 +39,7 @@ class StudentAdd extends StatelessWidget {
         child: Center(
           child: Container(
             padding: const EdgeInsets.all(16),
-            child: Form(
+            child: Form(key: formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -173,7 +175,7 @@ class StudentAdd extends StatelessWidget {
                         RollNUmberScreen(userRollNumberController: userRollNumberController, 
                         validateRollNumber: validateRollNumber),
                         const SizedBox(height: 20,),
-                        ButtonWidget(
+                        ButtonWidget(onSavepressed: onSavePressed,
                           userNameController: userNameController, 
                           userAgeController: userAgeController, 
                           userContactController: userContactController, 
@@ -194,4 +196,33 @@ class StudentAdd extends StatelessWidget {
       ),
     );
   }
+  // void onSavePressed(){
+  //   if(formKey.currentState!.validate()){
+  //     Get.to(StudentList());
+  //   }
+  // }
+
+  void onSavePressed() async {
+  if (formKey.currentState!.validate()) {
+    DatabaseController databaseController = Get.find<DatabaseController>();
+    if (!databaseController.isDatabaseInitialized) {
+      // Database is not initialized, show error message or handle accordingly
+      print("Database is not initialized");
+      return;
+    }
+    String name = userNameController.text;
+    String age = userAgeController.text;
+    String contact = userContactController.text;
+    String rollnumber = userRollNumberController.text;
+    int id = await databaseController.createData(name, age, contact, rollnumber, '');
+    if (id != -1) {
+      // Student added successfully, navigate to StudentList page
+      Get.to(StudentList());
+    } else {
+      // Handle error if insertion failed
+      // You can show a snackbar or dialog to notify the user
+      print('Error adding student data');
+    }
+  }
+}
 }
