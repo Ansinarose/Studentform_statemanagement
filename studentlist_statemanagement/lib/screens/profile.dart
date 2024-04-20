@@ -95,13 +95,6 @@ class ScreenProfile extends StatelessWidget {
                   ),
                  
                 
-                  
-                  //   child: Text('Name: ${studentData['name']}')),
-                  // Text('Age: ${studentData['age']}'),
-                  // Text('Contact: ${studentData['contact']}'),
-                  // Text('Roll Number: ${studentData['rollnumber']}'),
-                  // // Display other details as needed
-                        
                ) ],
               ),
             ),

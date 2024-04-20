@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 class  AgeScreen extends StatelessWidget {
    AgeScreen ({super.key, 
   required this.userAgeController,
-  required this.validateAge});
+  required this.validateAge, required this.editname});
 
   final TextEditingController userAgeController;
    final bool validateAge ;
-
+final bool editname;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -35,7 +35,7 @@ class  AgeScreen extends StatelessWidget {
 
         ),
         labelText: 'Age',
-        errorText: validateAge ? 'Age Not Found' : null,
+        errorText: editname && validateAge ?  'Age Not Found' : null,
       ),
       
     );

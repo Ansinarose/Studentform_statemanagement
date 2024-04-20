@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 class RollNUmberScreen extends StatelessWidget {
    RollNUmberScreen({super.key,
    required this.userRollNumberController,
-   required this.validateRollNumber});
+   required this.validateRollNumber, 
+   required this.editname});
 
   final  TextEditingController userRollNumberController;
   bool validateRollNumber = false;
-
+  final bool editname;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -36,7 +37,7 @@ class RollNUmberScreen extends StatelessWidget {
 
         ),
         labelText: 'Roll Number',
-        errorText: validateRollNumber ? 'Roll Number Not Found' : null,
+        errorText:editname && validateRollNumber ?  'Roll Number Not Found' : null,
       ),
     );
   }

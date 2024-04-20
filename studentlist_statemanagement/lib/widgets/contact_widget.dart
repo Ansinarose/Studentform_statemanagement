@@ -10,8 +10,12 @@ class ContactScreen extends StatelessWidget {
  
  final TextEditingController userContactController;
   final bool validateContact ;
+  final bool editname;
+   ContactScreen({super.key,
+   required this.userContactController,
+   required this.validateContact, 
+   required this.editname});
 
-   ContactScreen({super.key, required this.userContactController,required this.validateContact});
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -42,7 +46,7 @@ class ContactScreen extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(15))),
                                  labelText: "Contact",
-                                  errorText: validateContact ? 'Name Not Found !' : null,
+                                  errorText:editname && validateContact ? 'Contact Not Found !' : null,
       ),
        
     );

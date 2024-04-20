@@ -22,6 +22,7 @@ class StudentAdd extends StatelessWidget {
   final userRollNumberController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   bool validateName = false;
+  bool editname = false;
   bool validateAge = false;
   bool validateContact = false;
   bool validateRollNumber = false;
@@ -161,19 +162,19 @@ class StudentAdd extends StatelessWidget {
 
                         NameScreen(
                           validateName: validateName, 
-                          userNameController: userNameController),
+                          userNameController: userNameController, editname: editname,),
                          
                           const SizedBox(height: 20,),
                           
                         AgeScreen(
                             userAgeController: userAgeController,
-                             validateAge: validateAge),
+                             validateAge: validateAge, editname: editname,),
                               const SizedBox(height: 20,),
                         ContactScreen(userContactController: userContactController,
-                         validateContact: validateContact),
+                         validateContact: validateContact, editname: editname,),
                           const SizedBox(height: 20,),
                         RollNUmberScreen(userRollNumberController: userRollNumberController, 
-                        validateRollNumber: validateRollNumber),
+                        validateRollNumber: validateRollNumber, editname: editname,),
                         const SizedBox(height: 20,),
                         ButtonWidget(onSavepressed: onSavePressed,
                           userNameController: userNameController, 

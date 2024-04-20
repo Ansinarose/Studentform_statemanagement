@@ -2,13 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:studentlist_statemanagement/Model/db_helper.dart';
 import 'package:studentlist_statemanagement/controller/studentcontroller.dart';
+import 'package:studentlist_statemanagement/screens/splashScreen.dart';
 import 'package:studentlist_statemanagement/screens/studentlist.dart';
 
+// void main() {
+//   Get.put(DatabaseController());
+// // Get.put(StudentController());
+//   runApp( MyApp());
+// }
+
 void main() {
-  Get.put(DatabaseController());
-// Get.put(StudentController());
-  runApp( MyApp());
+  // Initialize GetX bindings
+  WidgetsFlutterBinding.ensureInitialized();
+   Get.put(DatabaseController());
+  // Initialize StudentController
+  Get.put(StudentController());
+  // Run the application
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
  // const MyApp({super.key});
@@ -24,7 +36,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home:   StudentList(),
+      home:   SplashScreen(),
     );
   }
 }
