@@ -5,11 +5,6 @@ import 'package:studentlist_statemanagement/controller/studentcontroller.dart';
 import 'package:studentlist_statemanagement/screens/splashScreen.dart';
 import 'package:studentlist_statemanagement/screens/studentlist.dart';
 
-// void main() {
-//   Get.put(DatabaseController());
-// // Get.put(StudentController());
-//   runApp( MyApp());
-// }
 
 void main() {
   // Initialize GetX bindings

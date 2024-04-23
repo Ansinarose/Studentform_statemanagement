@@ -34,7 +34,7 @@ class StudentAdd extends StatelessWidget {
       appBar: AppBar(
         title: const Text("ADD STUDENT"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 8, 120, 41),
+        backgroundColor: const Color.fromARGB(255, 8, 75, 120),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -98,7 +98,7 @@ class StudentAdd extends StatelessWidget {
                                   backgroundColor: Colors.green[50],
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
-                                    side: const BorderSide(width: 5, color: Colors.green),
+                                    side: const BorderSide(width: 5, color: Colors.blue),
                                   ),
                                   title: Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceAround,

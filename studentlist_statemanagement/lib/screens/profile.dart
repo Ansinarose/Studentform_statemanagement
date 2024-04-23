@@ -13,9 +13,9 @@ class ScreenProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: (Colors.green[200]),
+      backgroundColor: (Colors.blue[200]),
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 8, 120, 41),
+        backgroundColor: Color.fromARGB(255, 8, 75, 120),
         title: Text('Profile'),
         centerTitle: true,
       ),
@@ -48,7 +48,7 @@ class ScreenProfile extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 8),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                     color: Colors.green[400],
+                     color: Colors.blue[400],
                     ),
                      height: MediaQuery.of(context).size.height * 0.3,
                         width: MediaQuery.of(context).size.height * 0.3,

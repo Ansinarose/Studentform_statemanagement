@@ -1,6 +1,5 @@
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -16,7 +15,8 @@ class StudentList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 8, 120, 41),
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 8, 75, 120),
         title: const Text("STUDENT LIST"),
       ),
       body: GetBuilder<DatabaseController>(
@@ -47,7 +47,7 @@ class StudentList extends StatelessWidget {
                     child: Container(height: 100,
                       child: Card(
                         
-                        color: Colors.green[200],
+                        color: Colors.blue[200],
                         margin: EdgeInsets.all(15),
                         child: ListTile(
                           leading: CircleAvatar(
@@ -78,7 +78,8 @@ class StudentList extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop(); 
+                // Close the dialog
               },
               child: Text("Cancel"),
             ),
@@ -108,7 +109,7 @@ class StudentList extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(255, 8, 120, 41),
+        backgroundColor: const Color.fromARGB(255, 8, 75, 120),
         onPressed: () {
           Get.to(() => StudentAdd());
         },

@@ -38,7 +38,7 @@ class ScreenEdit extends StatelessWidget {
       appBar: AppBar(
         title: Text("Edit Student"),
         centerTitle: true,
-        backgroundColor: Color.fromARGB(255, 8, 120, 41),
+        backgroundColor: Color.fromARGB(255, 8, 75, 120),
       ),
       body: SingleChildScrollView(
         child: Center(
@@ -81,16 +81,16 @@ class ScreenEdit extends StatelessWidget {
                   // Button to pick or change the image
                   ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(Colors.green)
+                      backgroundColor: MaterialStatePropertyAll(Colors.blue)
                     ),
                     onPressed: () {
                       showDialog(
                         context: context,
                         builder: (context) => AlertDialog(
-                          backgroundColor: Colors.green[50],
+                          backgroundColor: Colors.blue[50],
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                            side: const BorderSide(width: 5, color: Colors.green),
+                            side: const BorderSide(width: 5, color: Colors.blue),
                           ),
                           title: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -153,7 +153,7 @@ class ScreenEdit extends StatelessWidget {
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: 
-                    MaterialStateProperty.all<Color>(Colors.green) ),
+                    MaterialStateProperty.all<Color>(Colors.blue) ),
                     onPressed: (){
 if (formKey.currentState!.validate()) {
       String name = userNameController.text;

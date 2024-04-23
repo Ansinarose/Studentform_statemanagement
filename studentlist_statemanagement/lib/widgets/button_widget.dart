@@ -22,7 +22,7 @@ final TextEditingController userAgeController;
     return ElevatedButton(
        style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.green)),
+                      MaterialStateProperty.all<Color>(Colors.blue)),
       onPressed:onSavepressed,
        child: const Text('Add Student',
        style: TextStyle(
